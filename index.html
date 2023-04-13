@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0413-1</title>
+    <style>
+        button{padding: 20px;}
+        #result {background: aqua;padding: 20px;}
+        .a {border: 2px solid #000;}
+        .b {font-size: 3rem;}
+        .c {color:antiquewhite;}
+        .d {background: yellow;}
+    </style>
+</head>
+<body>
+    <button type="button" id="btn">click!</button>
+    <button type="button" id="reset">reset!</button>
+    <p id="result">변경대상</p>
+    <script>
+        const btn = document.querySelector('#btn')
+        const reset = document.querySelector('#reset')
+        const result = document.querySelector('#result')
+        console.log(btn,result)
+        
+        result.classList.add('a')
+        btn.addEventListener('click',()=>{
+            result.classList.replace('a','b')
+        })
+        // btn.addEventListener('click',()=>{
+        //     result.classList.toggle('a') //toggle은 있으면 없어지고 없으면 있는 스위치 같은 기능을 한다. 
+        //     result.classList.toggle('b') //toggle은 있으면 없어지고 없으면 있는 스위치 같은 기능을 한다. 
+        //     result.classList.toggle('c') //toggle은 있으면 없어지고 없으면 있는 스위치 같은 기능을 한다. 
+        //     result.classList.toggle('d') //toggle은 있으면 없어지고 없으면 있는 스위치 같은 기능을 한다. 따로써야함, 연속으로 못씀
+            // result.classList.add('a','b')
+            // result.classList.add('c')
+
+            // result.className = 'a'
+            // result.className += ' b' //공백이 있어야 a와b가 들어간다
+            // result.className += ' c' //공백이 있어야 a와b와c가 들어간다
+        //대입연산자는 기존의 것을 지우고 들어가는 것 한번에 한가지만
+        reset.addEventListener('click',()=>{
+            result.classList.remove('a','b')
+        })
+
+
+        //배경색 css
+        //객체.style.속성 = '값'
+
+        //배경색,글자색,글꼴,크기css
+        //객체.style.배경 = '값'
+        //객체.style.글자색 = '값'
+
+        //class {배경,글자,글꼴,크기}
+        //객체.classList.add(클래스명)
+    </script>
+</body>
+</html>
